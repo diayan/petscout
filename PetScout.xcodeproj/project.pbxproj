@@ -54,6 +54,7 @@
 		B2675020284C9A040026A74E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267501F284C9A040026A74E /* RequestProtocol.swift */; };
 		B2675024284C9DC90026A74E /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2675023284C9DC90026A74E /* RequestType.swift */; };
 		B2675029284CA3AA0026A74E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2675028284CA3AA0026A74E /* NetworkError.swift */; };
+		B267502B284CD24B0026A74E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267502A284CD24B0026A74E /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		B267501F284C9A040026A74E /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		B2675023284C9DC90026A74E /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		B2675028284CA3AA0026A74E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B267502A284CD24B0026A74E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				B2675028284CA3AA0026A74E /* NetworkError.swift */,
+				B267502A284CD24B0026A74E /* APIManager.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				B2265533284C26FA00FFA14F /* ContentView.swift in Sources */,
 				B2674FD7284C2EAB0026A74E /* Pagination.swift in Sources */,
 				B2674FC3284C2D8E0026A74E /* Size.swift in Sources */,
+				B267502B284CD24B0026A74E /* APIManager.swift in Sources */,
 				B2674FCD284C2E0E0026A74E /* VideoLink.swift in Sources */,
 				B2674FBF284C2D210026A74E /* Details.swift in Sources */,
 				B2674FEE284C33C50026A74E /* AnimalContactsView.swift in Sources */,
