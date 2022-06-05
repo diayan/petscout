@@ -49,6 +49,7 @@
 		B267500F284C37870026A74E /* AnimalsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = B267500E284C37870026A74E /* AnimalsMock.json */; };
 		B2675012284C37E20026A74E /* PetScout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2675010284C37E20026A74E /* PetScout.xcdatamodeld */; };
 		B2675014284C398D0026A74E /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2675013284C398D0026A74E /* CoreDataTests.swift */; };
+		B267501C284C4AB40026A74E /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267501B284C4AB40026A74E /* Animal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		B267500E284C37870026A74E /* AnimalsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AnimalsMock.json; sourceTree = "<group>"; };
 		B2675011284C37E20026A74E /* PetScout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetScout.xcdatamodel; sourceTree = "<group>"; };
 		B2675013284C398D0026A74E /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		B267501B284C4AB40026A74E /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				B2674FD2284C2E7F0026A74E /* APIColors.swift */,
 				B2674FD4284C2E970026A74E /* AdoptionStatus.swift */,
 				B2674FD6284C2EAB0026A74E /* Pagination.swift */,
+				B267501B284C4AB40026A74E /* Animal.swift */,
 			);
 			path = animal;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				B2674FC9284C2DD60026A74E /* Breed.swift in Sources */,
 				B2674FEC284C33870026A74E /* AnimalDetailCard.swift in Sources */,
 				B2675012284C37E20026A74E /* PetScout.xcdatamodeld in Sources */,
+				B267501C284C4AB40026A74E /* Animal.swift in Sources */,
 				B2674FF4284C34280026A74E /* AnimalHeaderView.swift in Sources */,
 				B2674FDB284C2F260026A74E /* Organization.swift in Sources */,
 				B2674FF8284C34DB0026A74E /* AnimalsNearYouView.swift in Sources */,
