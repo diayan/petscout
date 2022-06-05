@@ -50,6 +50,7 @@
 		B2675012284C37E20026A74E /* PetScout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2675010284C37E20026A74E /* PetScout.xcdatamodeld */; };
 		B2675014284C398D0026A74E /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2675013284C398D0026A74E /* CoreDataTests.swift */; };
 		B267501C284C4AB40026A74E /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267501B284C4AB40026A74E /* Animal.swift */; };
+		B267501E284C4D460026A74E /* AnimalsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267501D284C4D450026A74E /* AnimalsMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		B2675011284C37E20026A74E /* PetScout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetScout.xcdatamodel; sourceTree = "<group>"; };
 		B2675013284C398D0026A74E /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		B267501B284C4AB40026A74E /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		B267501D284C4D450026A74E /* AnimalsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				B2674FD4284C2E970026A74E /* AdoptionStatus.swift */,
 				B2674FD6284C2EAB0026A74E /* Pagination.swift */,
 				B267501B284C4AB40026A74E /* Animal.swift */,
+				B267501D284C4D450026A74E /* AnimalsMock.swift */,
 			);
 			path = animal;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2674FC7284C2DB80026A74E /* Age.swift in Sources */,
+				B267501E284C4D460026A74E /* AnimalsMock.swift in Sources */,
 				B2674FD5284C2E970026A74E /* AdoptionStatus.swift in Sources */,
 				B2265533284C26FA00FFA14F /* ContentView.swift in Sources */,
 				B2674FD7284C2EAB0026A74E /* Pagination.swift in Sources */,
