@@ -51,6 +51,9 @@
 		B2675014284C398D0026A74E /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2675013284C398D0026A74E /* CoreDataTests.swift */; };
 		B267501C284C4AB40026A74E /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267501B284C4AB40026A74E /* Animal.swift */; };
 		B267501E284C4D460026A74E /* AnimalsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267501D284C4D450026A74E /* AnimalsMock.swift */; };
+		B2675020284C9A040026A74E /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267501F284C9A040026A74E /* RequestProtocol.swift */; };
+		B2675024284C9DC90026A74E /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2675023284C9DC90026A74E /* RequestType.swift */; };
+		B2675029284CA3AA0026A74E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2675028284CA3AA0026A74E /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,9 @@
 		B2675013284C398D0026A74E /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		B267501B284C4AB40026A74E /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		B267501D284C4D450026A74E /* AnimalsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsMock.swift; sourceTree = "<group>"; };
+		B267501F284C9A040026A74E /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		B2675023284C9DC90026A74E /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		B2675028284CA3AA0026A74E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				B2674FB6284C2BF90026A74E /* APIConstants.swift */,
+				B2675022284C9A3C0026A74E /* request */,
+				B2675027284CA3680026A74E /* network */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -424,6 +432,23 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		B2675022284C9A3C0026A74E /* request */ = {
+			isa = PBXGroup;
+			children = (
+				B267501F284C9A040026A74E /* RequestProtocol.swift */,
+				B2675023284C9DC90026A74E /* RequestType.swift */,
+			);
+			path = request;
+			sourceTree = "<group>";
+		};
+		B2675027284CA3680026A74E /* network */ = {
+			isa = PBXGroup;
+			children = (
+				B2675028284CA3AA0026A74E /* NetworkError.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -574,6 +599,7 @@
 				B2674FCF284C2E320026A74E /* AnimalAttributes.swift in Sources */,
 				B2674FC5284C2DA20026A74E /* Gender.swift in Sources */,
 				B2674FF0284C33EA0026A74E /* AnimalContactLink.swift in Sources */,
+				B2675029284CA3AA0026A74E /* NetworkError.swift in Sources */,
 				B2674FD1284C2E690026A74E /* AnimalEnvironment.swift in Sources */,
 				B2265531284C26A700FFA14F /* AppMain.swift in Sources */,
 				B2675002284C36400026A74E /* AnimalTypeSuggestionView.swift in Sources */,
@@ -581,6 +607,7 @@
 				B2674FC1284C2D560026A74E /* Coat.swift in Sources */,
 				B2674FFC284C354B0026A74E /* AnimalSearchType.swift in Sources */,
 				B2674FC9284C2DD60026A74E /* Breed.swift in Sources */,
+				B2675020284C9A040026A74E /* RequestProtocol.swift in Sources */,
 				B2674FEC284C33870026A74E /* AnimalDetailCard.swift in Sources */,
 				B2675012284C37E20026A74E /* PetScout.xcdatamodeld in Sources */,
 				B267501C284C4AB40026A74E /* Animal.swift in Sources */,
@@ -595,6 +622,7 @@
 				B2674FF2284C34060026A74E /* AnimalLocationView.swift in Sources */,
 				B2674FE3284C302A0026A74E /* AddressFetcher.swift in Sources */,
 				B2674FDD284C2F480026A74E /* User.swift in Sources */,
+				B2675024284C9DC90026A74E /* RequestType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
