@@ -59,6 +59,8 @@
 		B2E5D17B284E945F003E81A9 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D17A284E945F003E81A9 /* DataParser.swift */; };
 		B2E5D17E284E9D4B003E81A9 /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D17D284E9D4B003E81A9 /* AuthTokenRequest.swift */; };
 		B2E5D183284E9FA0003E81A9 /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D182284E9FA0003E81A9 /* APIToken.swift */; };
+		B2E5D186284EAC4D003E81A9 /* AccessTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D185284EAC4D003E81A9 /* AccessTokenManager.swift */; };
+		B2E5D188284EACB3003E81A9 /* AppUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D187284EACB3003E81A9 /* AppUserDefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,8 @@
 		B2E5D17A284E945F003E81A9 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		B2E5D17D284E9D4B003E81A9 /* AuthTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRequest.swift; sourceTree = "<group>"; };
 		B2E5D182284E9FA0003E81A9 /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
+		B2E5D185284EAC4D003E81A9 /* AccessTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenManager.swift; sourceTree = "<group>"; };
+		B2E5D187284EACB3003E81A9 /* AppUserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaultsKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +225,8 @@
 				B2675022284C9A3C0026A74E /* request */,
 				B2675027284CA3680026A74E /* network */,
 				B2E5D17C284E95B3003E81A9 /* parser */,
-				B2E5D182284E9FA0003E81A9 /* APIToken.swift */,
+				B2E5D184284EABE4003E81A9 /* model */,
+				B2E5D185284EAC4D003E81A9 /* AccessTokenManager.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			children = (
 				B2674FE2284C302A0026A74E /* AddressFetcher.swift */,
 				B2674FE4284C30550026A74E /* LocationManager.swift */,
+				B2E5D187284EACB3003E81A9 /* AppUserDefaultsKeys.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -478,6 +484,14 @@
 				B2E5D17D284E9D4B003E81A9 /* AuthTokenRequest.swift */,
 			);
 			path = auth;
+			sourceTree = "<group>";
+		};
+		B2E5D184284EABE4003E81A9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5D182284E9FA0003E81A9 /* APIToken.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +650,8 @@
 				B2674FF0284C33EA0026A74E /* AnimalContactLink.swift in Sources */,
 				B2675029284CA3AA0026A74E /* NetworkError.swift in Sources */,
 				B2674FD1284C2E690026A74E /* AnimalEnvironment.swift in Sources */,
+				B2E5D186284EAC4D003E81A9 /* AccessTokenManager.swift in Sources */,
+				B2E5D188284EACB3003E81A9 /* AppUserDefaultsKeys.swift in Sources */,
 				B2265531284C26A700FFA14F /* AppMain.swift in Sources */,
 				B2675002284C36400026A74E /* AnimalTypeSuggestionView.swift in Sources */,
 				B2674FD3284C2E7F0026A74E /* APIColors.swift in Sources */,
