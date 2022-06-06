@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DataParserProtocol {
-    func parse<T: Decodable>(data: Data) async throws -> T
+    func parse<T: Decodable>(data: Data) throws -> T
 }
 
 class DataParser: DataParserProtocol {
@@ -19,7 +19,7 @@ class DataParser: DataParserProtocol {
         self.jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
-    func parse<T>(data: Data) async throws -> T where T : Decodable {
+    func parse<T>(data: Data) throws -> T where T : Decodable {
         return try jsonDecoder.decode(T.self, from: data)
     }
 }

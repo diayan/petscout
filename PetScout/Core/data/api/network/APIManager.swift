@@ -9,6 +9,8 @@ import Foundation
 
 protocol APIManagerProtocol {
     func perform(_ request: RequestProtocol, authToken: String) async throws  -> Data
+    
+    func requestToken() async throws -> Data
 }
 
 class APIManager: APIManagerProtocol {
@@ -21,7 +23,7 @@ class APIManager: APIManagerProtocol {
         self.urlSession = urlSession
     }
     
-    func perform(_ request: RequestProtocol, authToken: String) async throws -> Data {
+    func perform(_ request: RequestProtocol, authToken: String = "") async throws -> Data {
         let (data, response) = try await urlSession.data(for: request.createUrlRequest(authToken: authToken))
         
         guard let httpResponse = response as? HTTPURLResponse,
@@ -30,4 +32,9 @@ class APIManager: APIManagerProtocol {
               }
         return data
     }
+    
+    func requestToken() async throws -> Data {
+        try await perform(AuthTokenRequest.auth)
+    }
+
 }
