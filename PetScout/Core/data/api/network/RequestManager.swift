@@ -22,10 +22,15 @@ class RequestManager: RequestManagerProtocol {
     }
     
     func perform<T>(_ request: RequestProtocol) async throws -> T where T : Decodable {
-        let data = try await apiManager.perform(request, authToken: "")
-        return data
+        let authToken = try await requestAccessToken() //fetch token
+        
+        let data = try await apiManager.perform(request, authToken: authToken)
+        
+        let decoded: T = try parser.parse(data: data)
+        return decoded
     }
     
+    //access token request 
     func requestAccessToken() async throws -> String {
         let data = try await apiManager.requestToken()
         let token: APIToken = try parser.parse(data: data)
