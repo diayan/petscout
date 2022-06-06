@@ -61,6 +61,8 @@
 		B2E5D183284E9FA0003E81A9 /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D182284E9FA0003E81A9 /* APIToken.swift */; };
 		B2E5D186284EAC4D003E81A9 /* AccessTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D185284EAC4D003E81A9 /* AccessTokenManager.swift */; };
 		B2E5D188284EACB3003E81A9 /* AppUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D187284EACB3003E81A9 /* AppUserDefaultsKeys.swift */; };
+		B2E5D18B284EB2ED003E81A9 /* AnimalsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D18A284EB2ED003E81A9 /* AnimalsRequest.swift */; };
+		B2E5D18F284EB6B9003E81A9 /* AnimalsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D18E284EB6B9003E81A9 /* AnimalsContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,8 @@
 		B2E5D182284E9FA0003E81A9 /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
 		B2E5D185284EAC4D003E81A9 /* AccessTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenManager.swift; sourceTree = "<group>"; };
 		B2E5D187284EACB3003E81A9 /* AppUserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaultsKeys.swift; sourceTree = "<group>"; };
+		B2E5D18A284EB2ED003E81A9 /* AnimalsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsRequest.swift; sourceTree = "<group>"; };
+		B2E5D18E284EB6B9003E81A9 /* AnimalsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +230,7 @@
 				B2675027284CA3680026A74E /* network */,
 				B2E5D17C284E95B3003E81A9 /* parser */,
 				B2E5D184284EABE4003E81A9 /* model */,
-				B2E5D185284EAC4D003E81A9 /* AccessTokenManager.swift */,
+				B2E5D189284EB286003E81A9 /* token */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -277,6 +281,7 @@
 				B2674FD6284C2EAB0026A74E /* Pagination.swift */,
 				B267501B284C4AB40026A74E /* Animal.swift */,
 				B267501D284C4D450026A74E /* AnimalsMock.swift */,
+				B2E5D18E284EB6B9003E81A9 /* AnimalsContainer.swift */,
 			);
 			path = animal;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 			children = (
 				B267501F284C9A040026A74E /* RequestProtocol.swift */,
 				B2675023284C9DC90026A74E /* RequestType.swift */,
+				B2E5D18D284EB310003E81A9 /* animals */,
 				B2E5D17F284E9D53003E81A9 /* auth */,
 			);
 			path = request;
@@ -492,6 +498,22 @@
 				B2E5D182284E9FA0003E81A9 /* APIToken.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		B2E5D189284EB286003E81A9 /* token */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5D185284EAC4D003E81A9 /* AccessTokenManager.swift */,
+			);
+			path = token;
+			sourceTree = "<group>";
+		};
+		B2E5D18D284EB310003E81A9 /* animals */ = {
+			isa = PBXGroup;
+			children = (
+				B2E5D18A284EB2ED003E81A9 /* AnimalsRequest.swift */,
+			);
+			path = animals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -659,6 +681,7 @@
 				B2674FFC284C354B0026A74E /* AnimalSearchType.swift in Sources */,
 				B2674FC9284C2DD60026A74E /* Breed.swift in Sources */,
 				B2E5D17E284E9D4B003E81A9 /* AuthTokenRequest.swift in Sources */,
+				B2E5D18B284EB2ED003E81A9 /* AnimalsRequest.swift in Sources */,
 				B2675020284C9A040026A74E /* RequestProtocol.swift in Sources */,
 				B2674FEC284C33870026A74E /* AnimalDetailCard.swift in Sources */,
 				B2675012284C37E20026A74E /* PetScout.xcdatamodeld in Sources */,
@@ -671,6 +694,7 @@
 				B2674FE5284C30550026A74E /* LocationManager.swift in Sources */,
 				B2675006284C368C0026A74E /* SuggestionsGrid.swift in Sources */,
 				B2674FB7284C2BF90026A74E /* APIConstants.swift in Sources */,
+				B2E5D18F284EB6B9003E81A9 /* AnimalsContainer.swift in Sources */,
 				B2674FF2284C34060026A74E /* AnimalLocationView.swift in Sources */,
 				B2674FE3284C302A0026A74E /* AddressFetcher.swift in Sources */,
 				B2674FDD284C2F480026A74E /* User.swift in Sources */,
