@@ -63,6 +63,7 @@
 		B2E5D188284EACB3003E81A9 /* AppUserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D187284EACB3003E81A9 /* AppUserDefaultsKeys.swift */; };
 		B2E5D18B284EB2ED003E81A9 /* AnimalsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D18A284EB2ED003E81A9 /* AnimalsRequest.swift */; };
 		B2E5D18F284EB6B9003E81A9 /* AnimalsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D18E284EB6B9003E81A9 /* AnimalsContainer.swift */; };
+		B2E5D191284EB8EA003E81A9 /* AnimalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D190284EB8EA003E81A9 /* AnimalRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		B2E5D187284EACB3003E81A9 /* AppUserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserDefaultsKeys.swift; sourceTree = "<group>"; };
 		B2E5D18A284EB2ED003E81A9 /* AnimalsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsRequest.swift; sourceTree = "<group>"; };
 		B2E5D18E284EB6B9003E81A9 /* AnimalsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsContainer.swift; sourceTree = "<group>"; };
+		B2E5D190284EB8EA003E81A9 /* AnimalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				B2674FF7284C34DB0026A74E /* AnimalsNearYouView.swift */,
+				B2E5D190284EB8EA003E81A9 /* AnimalRow.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2674FC7284C2DB80026A74E /* Age.swift in Sources */,
+				B2E5D191284EB8EA003E81A9 /* AnimalRow.swift in Sources */,
 				B267501E284C4D460026A74E /* AnimalsMock.swift in Sources */,
 				B2E5D17B284E945F003E81A9 /* DataParser.swift in Sources */,
 				B2674FD5284C2E970026A74E /* AdoptionStatus.swift in Sources */,
