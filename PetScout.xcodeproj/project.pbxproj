@@ -67,6 +67,8 @@
 		B2E5D196284F6B40003E81A9 /* APIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D195284F6B40003E81A9 /* APIManagerMock.swift */; };
 		B2E5D198284F6D1D003E81A9 /* AccessTokenTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D197284F6D1D003E81A9 /* AccessTokenTestHelper.swift */; };
 		B2E5D19A284FFF33003E81A9 /* AnimalsRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D199284FFF33003E81A9 /* AnimalsRequestMock.swift */; };
+		B2E5D19C285001C6003E81A9 /* RequestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D19B285001C6003E81A9 /* RequestManagerTests.swift */; };
+		B2E5D19E28500FAE003E81A9 /* AccessTokenManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D19D28500FAE003E81A9 /* AccessTokenManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +153,8 @@
 		B2E5D195284F6B40003E81A9 /* APIManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerMock.swift; sourceTree = "<group>"; };
 		B2E5D197284F6D1D003E81A9 /* AccessTokenTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenTestHelper.swift; sourceTree = "<group>"; };
 		B2E5D199284FFF33003E81A9 /* AnimalsRequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsRequestMock.swift; sourceTree = "<group>"; };
+		B2E5D19B285001C6003E81A9 /* RequestManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerTests.swift; sourceTree = "<group>"; };
+		B2E5D19D28500FAE003E81A9 /* AccessTokenManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +535,8 @@
 			children = (
 				B2E5D194284F6AD1003E81A9 /* helper */,
 				B2E5D193284F6ACB003E81A9 /* mock */,
+				B2E5D19B285001C6003E81A9 /* RequestManagerTests.swift */,
+				B2E5D19D28500FAE003E81A9 /* AccessTokenManagerTests.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -744,6 +750,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2E5D198284F6D1D003E81A9 /* AccessTokenTestHelper.swift in Sources */,
+				B2E5D19E28500FAE003E81A9 /* AccessTokenManagerTests.swift in Sources */,
+				B2E5D19C285001C6003E81A9 /* RequestManagerTests.swift in Sources */,
 				B2E5D196284F6B40003E81A9 /* APIManagerMock.swift in Sources */,
 				B2675014284C398D0026A74E /* CoreDataTests.swift in Sources */,
 				B2E5D19A284FFF33003E81A9 /* AnimalsRequestMock.swift in Sources */,
