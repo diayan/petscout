@@ -35,4 +35,27 @@ class AccessTokenManagerTests: XCTestCase {
         XCTAssertFalse(token.isEmpty)
     }
 
+    func test_cachedToken() async throws {
+        guard let sameToken: String =
+        accessTokenManager?.fetchToken() else {
+            XCTFail("Didn't get token from access token manager")
+            return
+        }
+    
+        XCTAssertEqual(sameToken, token.bearerAccessToken, "Found the same token")
+    }
+    
+    func test_refreshToken() async throws {
+        let randomToken = AccessTokenTestHelper.randomAPIToken()
+
+        guard let accessTokenManager = accessTokenManager else {
+          XCTFail("Access token manager object is nil")
+          return
+        }
+        
+        
+        try accessTokenManager.refreshWith(apiToken: randomToken)
+        XCTAssertNotEqual(token.bearerAccessToken, accessTokenManager.fetchToken())
+        XCTAssertEqual(randomToken.bearerAccessToken, accessTokenManager.fetchToken())
+    }
 }
