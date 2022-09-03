@@ -17,9 +17,10 @@ class RequestManager: RequestManagerProtocol {
     let parser: DataParserProtocol
     let accessTokenManager: AccessTokenManager
     
-    init(apiManager: APIManagerProtocol = APIManager(),
-         parser: DataParserProtocol = DataParser(),
-         accessTokenManager: AccessTokenManager = AccessTokenManager()
+    init(
+        apiManager: APIManagerProtocol = APIManager(),
+        parser: DataParserProtocol = DataParser(),
+        accessTokenManager: AccessTokenManager = AccessTokenManager()
     ) {
         self.apiManager = apiManager
         self.parser = parser
