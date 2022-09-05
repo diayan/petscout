@@ -33,7 +33,8 @@ class RequestManagerTests: XCTestCase {
     func testRequestAnimals() async throws {
         guard let container: AnimalsContainer =
                 try await requestManager?.perform(
-                    AnimalsRequestMock.getAnimals) else {
+                    AnimalsRequestMock.getAnimals
+                ) else {
                         XCTFail("Didn't get data from the request manager")
                         return
                     }
@@ -53,6 +54,5 @@ class RequestManagerTests: XCTestCase {
         XCTAssertEqual(last?.gender.rawValue, "Female")
         XCTAssertEqual(last?.size.rawValue, "Large")
         XCTAssertEqual(last?.coat, nil)
-    }
-    
+    }    
 }
