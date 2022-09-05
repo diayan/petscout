@@ -19,7 +19,7 @@ enum AnimalsRequestMock: RequestProtocol {
         
         return path
     }
-    
+        
     var requestType: RequestType {
         .GET
     }
