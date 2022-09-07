@@ -57,6 +57,13 @@
         <attribute name="tertiary" optional="YES" attributeType="String"/>
         <relationship name="animal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnimalEntity" inverseName="colors" inverseEntity="AnimalEntity"/>
     </entity>
+    <entity name="BreedEntity" representedClassName="BreedEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="mixed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="primary" optional="YES" attributeType="String"/>
+        <attribute name="secondary" optional="YES" attributeType="String"/>
+        <attribute name="unknown" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
     <entity name="ContactEntity" representedClassName="ContactEntity" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -93,17 +100,18 @@
         <relationship name="animal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnimalEntity" inverseName="videos" inverseEntity="AnimalEntity"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
         <element name="AdressEntity" positionX="-54" positionY="0" width="128" height="149"/>
         <element name="AnimalAttributesEntity" positionX="-36" positionY="63" width="128" height="134"/>
         <element name="AnimalEntity" positionX="-18" positionY="99" width="128" height="359"/>
         <element name="AnimalEnvironmentEntity" positionX="0" positionY="180" width="128" height="104"/>
         <element name="APIColorsEntity" positionX="18" positionY="189" width="128" height="104"/>
         <element name="ContactEntity" positionX="36" positionY="198" width="128" height="119"/>
+        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
         <element name="OrganizationEntity" positionX="-9" positionY="144" width="128" height="74"/>
         <element name="PhotoSizesEntity" positionX="0" positionY="153" width="128" height="119"/>
         <element name="TagEntity" positionX="9" positionY="162" width="128" height="29"/>
         <element name="UserEntity" positionX="18" positionY="171" width="128" height="74"/>
         <element name="VideoLinkEntity" positionX="27" positionY="180" width="128" height="74"/>
+        <element name="BreedEntity" positionX="36" positionY="189" width="128" height="104"/>
     </elements>
 </model>
