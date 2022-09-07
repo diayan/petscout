@@ -1,0 +1,41 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        destination: ['platform=iOS Simulator,OS=15.2,name=iPhone 13 Pro']
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Select Xcode
+      run:  sudo xcode-select -switch /Applications/Xcode_13.2.1.app
+
+    - name: Build
+      run:  xcodebuild clean build -project PetScout.xcodeproj -scheme PetScout -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+      env: 
+         destination: ${{ matrix.destination }}
+
+    - name: Tests
+      run:  xcodebuild clean build -project PetScout.xcodeproj -scheme PetScout -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+      env: 
+         destination: ${{ matrix.destination }}
+
+  swiftlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: GitHub Action for SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
+      - name: GitHub Action for SwiftLint with --strict
+        uses: norio-nomura/action-swiftlint@3.2.1 
+    
