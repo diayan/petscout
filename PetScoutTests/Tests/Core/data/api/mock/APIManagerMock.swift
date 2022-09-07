@@ -11,7 +11,8 @@ import Foundation
 
 struct APIManagerMock: APIManagerProtocol {
     func perform(_ request: RequestProtocol, authToken: String) async throws -> Data {
-        return try Data(contentsOf: URL(fileURLWithPath: request.path), options: .mappedIfSafe)
+        return try Data(contentsOf: URL(fileURLWithPath: request.path),
+                        options: .mappedIfSafe)
     }
     
     //return dummy token in the form of string json as Data

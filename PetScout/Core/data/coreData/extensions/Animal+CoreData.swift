@@ -11,7 +11,8 @@ extension AnimalEntity {
     
     var age: Age {
         get {
-            guard let ageValue = ageValue, let age = Age(rawValue: ageValue) else { return Age.unknown }
+            guard let ageValue = ageValue,
+                    let age = Age(rawValue: ageValue) else { return Age.unknown }
             return age
         }
         
@@ -22,7 +23,8 @@ extension AnimalEntity {
     
     var coat: Coat {
         get {
-            guard let coatValue = coatValue, let coat = Coat(rawValue: coatValue) else {return Coat.unknown}
+            guard let coatValue = coatValue,
+                    let coat = Coat(rawValue: coatValue) else {return Coat.unknown}
             return coat
         }
         
@@ -33,7 +35,8 @@ extension AnimalEntity {
     
     var gender: Gender {
         get {
-            guard let genderValue = genderValue, let gender = Gender(rawValue: genderValue) else {return Gender.unknown}
+            guard let genderValue = genderValue,
+                    let gender = Gender(rawValue: genderValue) else {return Gender.unknown}
             return gender
         }
         
@@ -44,7 +47,8 @@ extension AnimalEntity {
     
     var size: Size {
         get {
-            guard let sizeValue = sizeValue, let size = Size(rawValue: sizeValue) else { return Size.unknown }
+            guard let sizeValue = sizeValue,
+                    let size = Size(rawValue: sizeValue) else { return Size.unknown }
             return size
         }
         

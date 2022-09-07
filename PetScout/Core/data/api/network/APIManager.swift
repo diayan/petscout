@@ -16,8 +16,11 @@ protocol APIManagerProtocol {
 class APIManager: APIManagerProtocol {
     private let urlSession: URLSession
     
-    /*initialize urlSession with default shared URLSession.shared provides a singleton that returns a URLSession.
-     For most use cases, like this app, using URLSession.shared is enough. But you shouldn’t do things like customizing the cache, cookie storage or credential storage when using shared. For that, create a URLSessionConfiguration object.
+    /*initialize urlSession with default shared URLSession.shared provides a
+     singleton that returns a URLSession.
+     For most use cases, like this app, using URLSession.shared is enough.
+     But you shouldn’t do things like customizing the cache, cookie storage
+     or credential storage when using shared. For that, create a URLSessionConfiguration object.
      */
     init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession

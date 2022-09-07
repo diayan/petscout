@@ -26,7 +26,8 @@ protocol RequestProtocol {
 
 //default implementation of RequestProtocol
 extension RequestProtocol {
-    //This is the base URL. Since there is only one, there’s no need to add the protocol definitions.
+    //This is the base URL. Since there is only one,
+    //there’s no need to add the protocol definitions.
     var host: String {
         APIConstants.host
     }
@@ -36,7 +37,8 @@ extension RequestProtocol {
         true
     }
     
-    /*Some requests don’t require params, urlParams and headers, so they have a default value of an empty dictionary.*/
+    /*Some requests don’t require params, urlParams and headers,
+     so they have a default value of an empty dictionary.*/
     var params: [String: Any] {
         [:]
     }
