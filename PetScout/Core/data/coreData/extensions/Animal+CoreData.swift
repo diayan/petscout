@@ -68,7 +68,7 @@ extension AnimalEntity {
       }
     }
     
-    @objc var breed: String {
-        return breeds?.primary ?? breeds?.secondary ?? ""
-    }
+//    @objc var breed: String {
+//        return breeds?.primary ?? breeds?.secondary ?? ""
+//    }
 }
