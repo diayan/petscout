@@ -8,7 +8,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="postcode" optional="YES" attributeType="String"/>
         <attribute name="state" optional="YES" attributeType="String"/>
-        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactEntity" inverseName="address" inverseEntity="ContactEntity"/>
+        <relationship name="contact" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContactEntity" inverseName="address" inverseEntity="ContactEntity"/>
     </entity>
     <entity name="AnimalAttributesEntity" representedClassName="AnimalAttributesEntity" syncable="YES" codeGenerationType="class">
         <attribute name="declawed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -37,11 +37,12 @@
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
         <relationship name="attributes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnimalAttributesEntity" inverseName="animal" inverseEntity="AnimalAttributesEntity"/>
+        <relationship name="breeds" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BreedEntity" inverseName="animal" inverseEntity="BreedEntity"/>
         <relationship name="colors" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APIColorsEntity" inverseName="animal" inverseEntity="APIColorsEntity"/>
         <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ContactEntity" inverseName="animal" inverseEntity="ContactEntity"/>
         <relationship name="environment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnimalEnvironmentEntity" inverseName="animal" inverseEntity="AnimalEnvironmentEntity"/>
-        <relationship name="photos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PhotoSizesEntity" inverseName="animal" inverseEntity="PhotoSizesEntity"/>
-        <relationship name="videos" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VideoLinkEntity" inverseName="animal" inverseEntity="VideoLinkEntity"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhotoSizesEntity" inverseName="animal" inverseEntity="PhotoSizesEntity"/>
+        <relationship name="videos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VideoLinkEntity" inverseName="animal" inverseEntity="VideoLinkEntity"/>
     </entity>
     <entity name="AnimalEnvironmentEntity" representedClassName="AnimalEnvironmentEntity" syncable="YES" codeGenerationType="class">
         <attribute name="cats" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -63,6 +64,7 @@
         <attribute name="primary" optional="YES" attributeType="String"/>
         <attribute name="secondary" optional="YES" attributeType="String"/>
         <attribute name="unknown" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="animal" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AnimalEntity" inverseName="breeds" inverseEntity="AnimalEntity"/>
     </entity>
     <entity name="ContactEntity" representedClassName="ContactEntity" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
@@ -70,7 +72,7 @@
         <attribute name="phone" optional="YES" attributeType="String"/>
         <relationship name="address" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AdressEntity" inverseName="contact" inverseEntity="AdressEntity"/>
         <relationship name="animal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnimalEntity" inverseName="contact" inverseEntity="AnimalEntity"/>
-        <relationship name="organization" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrganizationEntity" inverseName="contact" inverseEntity="OrganizationEntity"/>
+        <relationship name="organization" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrganizationEntity" inverseName="contact" inverseEntity="OrganizationEntity"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -102,9 +104,10 @@
     <elements>
         <element name="AdressEntity" positionX="-54" positionY="0" width="128" height="149"/>
         <element name="AnimalAttributesEntity" positionX="-36" positionY="63" width="128" height="134"/>
-        <element name="AnimalEntity" positionX="-18" positionY="99" width="128" height="359"/>
+        <element name="AnimalEntity" positionX="-18" positionY="99" width="128" height="374"/>
         <element name="AnimalEnvironmentEntity" positionX="0" positionY="180" width="128" height="104"/>
         <element name="APIColorsEntity" positionX="18" positionY="189" width="128" height="104"/>
+        <element name="BreedEntity" positionX="36" positionY="189" width="128" height="119"/>
         <element name="ContactEntity" positionX="36" positionY="198" width="128" height="119"/>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
         <element name="OrganizationEntity" positionX="-9" positionY="144" width="128" height="74"/>
@@ -112,6 +115,5 @@
         <element name="TagEntity" positionX="9" positionY="162" width="128" height="29"/>
         <element name="UserEntity" positionX="18" positionY="171" width="128" height="74"/>
         <element name="VideoLinkEntity" positionX="27" positionY="180" width="128" height="74"/>
-        <element name="BreedEntity" positionX="36" positionY="189" width="128" height="104"/>
     </elements>
 </model>
