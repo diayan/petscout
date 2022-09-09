@@ -5,7 +5,7 @@
 //  Created by diayan siat on 09/09/2022.
 //
 
-import Foundation
+import CoreData
 
 extension Breed: CoreDataPersistable {
     typealias ManagedType = BreedEntity
