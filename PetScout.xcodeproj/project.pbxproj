@@ -12,6 +12,7 @@
 		B2265522284C24E600FFA14F /* PetScoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2265521284C24E600FFA14F /* PetScoutUITests.swift */; };
 		B2265531284C26A700FFA14F /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2265530284C26A700FFA14F /* AppMain.swift */; };
 		B2265533284C26FA00FFA14F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2265532284C26FA00FFA14F /* ContentView.swift */; };
+		B25139C828C9F577008CD6C8 /* CoreDataPersistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25139C728C9F577008CD6C8 /* CoreDataPersistable.swift */; };
 		B2674FB7284C2BF90026A74E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2674FB6284C2BF90026A74E /* APIConstants.swift */; };
 		B2674FBA284C2C420026A74E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2674FB9284C2C420026A74E /* Persistence.swift */; };
 		B2674FBF284C2D210026A74E /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2674FBE284C2D210026A74E /* Details.swift */; };
@@ -99,6 +100,7 @@
 		B2265521284C24E600FFA14F /* PetScoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetScoutUITests.swift; sourceTree = "<group>"; };
 		B2265530284C26A700FFA14F /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		B2265532284C26FA00FFA14F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B25139C728C9F577008CD6C8 /* CoreDataPersistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistable.swift; sourceTree = "<group>"; };
 		B2674FB6284C2BF90026A74E /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		B2674FB9284C2C420026A74E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B2674FBE284C2D210026A74E /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				B280C46128C6CB0E005D6DE5 /* Animal+CoreData.swift */,
+				B25139C728C9F577008CD6C8 /* CoreDataPersistable.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				B2674FFC284C354B0026A74E /* AnimalSearchType.swift in Sources */,
 				B2674FC9284C2DD60026A74E /* Breed.swift in Sources */,
 				B2E5D17E284E9D4B003E81A9 /* AuthTokenRequest.swift in Sources */,
+				B25139C828C9F577008CD6C8 /* CoreDataPersistable.swift in Sources */,
 				B2E5D18B284EB2ED003E81A9 /* AnimalsRequest.swift in Sources */,
 				B2675020284C9A040026A74E /* RequestProtocol.swift in Sources */,
 				B2674FEC284C33870026A74E /* AnimalDetailCard.swift in Sources */,
