@@ -70,7 +70,8 @@ class CoreDataTests: XCTestCase {
         let previewContext = PersistenceController.shared.container.viewContext
         let fetchRequest = AnimalEntity.fetchRequest()
         fetchRequest.fetchLimit = 1
-        
+        fetchRequest.predicate = NSPredicate(format: "name == %@", "Ellie")
+
         guard let results = try? previewContext.fetch(fetchRequest),
         let first = results.first else { return }
         
