@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AnimalsNearYouView: View {
-    @State var animals: [Animal] = []
+    @State var animals: [AnimalEntity] = []
     @State var isLoading = true
     private let requestManager = RequestManager()
 
@@ -35,14 +35,21 @@ struct AnimalsNearYouView: View {
     
     func fetchAnimals() async {
       do {
-        let animalsContainer: AnimalsContainer =
+          let animalsContainer: AnimalsContainer =
           try await requestManager.perform(AnimalsRequest.getAnimalsWith(
             page: 1,
             latitude: nil,
-            longitude: nil))
-        self.animals = animalsContainer.animals
+            longitude: nil)
+          )
+
+          //o convert each animal from the structure to a Core Data object
+          for var animal in animalsContainer.animals {
+              animal.toManagedObject()
+          }
         await stopLoading()
-      } catch {}
+      } catch {
+          print("Error fetching animals...\(error)")
+      }
     }
 
     @MainActor
@@ -53,6 +60,9 @@ struct AnimalsNearYouView: View {
 
 struct AnimalsNearYouView_Previews: PreviewProvider {
   static var previews: some View {
+      if let animals = CoreDataHelper.getTestAnimalEntities() {
+          AnimalsNearYouView(animals: animals, isLoading: false)
+      }
     AnimalsNearYouView()
   }
 }
