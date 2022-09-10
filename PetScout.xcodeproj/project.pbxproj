@@ -16,6 +16,7 @@
 		B21C80E128CBD4D20089CC23 /* VideoLink+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C80E028CBD4D20089CC23 /* VideoLink+CoreData.swift */; };
 		B21C80E328CBD5B00089CC23 /* Contact+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C80E228CBD5B00089CC23 /* Contact+CoreData.swift */; };
 		B21C80E528CBD8E70089CC23 /* Organization+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C80E428CBD8E70089CC23 /* Organization+CoreData.swift */; };
+		B21C80E728CC00C00089CC23 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21C80E628CC00C00089CC23 /* CoreDataHelper.swift */; };
 		B226550A284C24E600FFA14F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2265509284C24E600FFA14F /* Assets.xcassets */; };
 		B226550D284C24E600FFA14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B226550B284C24E600FFA14F /* LaunchScreen.storyboard */; };
 		B2265522284C24E600FFA14F /* PetScoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2265521284C24E600FFA14F /* PetScoutUITests.swift */; };
@@ -110,6 +111,7 @@
 		B21C80E028CBD4D20089CC23 /* VideoLink+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoLink+CoreData.swift"; sourceTree = "<group>"; };
 		B21C80E228CBD5B00089CC23 /* Contact+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreData.swift"; sourceTree = "<group>"; };
 		B21C80E428CBD8E70089CC23 /* Organization+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Organization+CoreData.swift"; sourceTree = "<group>"; };
+		B21C80E628CC00C00089CC23 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		B22654FD284C24E400FFA14F /* PetScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2265509284C24E600FFA14F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B226550C284C24E600FFA14F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				B280C46028C6CAE3005D6DE5 /* extensions */,
 				B2675010284C37E20026A74E /* PetScout.xcdatamodeld */,
 				B2674FB9284C2C420026A74E /* Persistence.swift */,
+				B21C80E628CC00C00089CC23 /* CoreDataHelper.swift */,
 			);
 			path = coreData;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				B2674FBF284C2D210026A74E /* Details.swift in Sources */,
 				B21C80DF28CBD43C0089CC23 /* User+CoreData.swift in Sources */,
 				B2674FEE284C33C50026A74E /* AnimalContactsView.swift in Sources */,
+				B21C80E728CC00C00089CC23 /* CoreDataHelper.swift in Sources */,
 				B2674FFE284C35CB0026A74E /* AnimalSearchAge.swift in Sources */,
 				B2674FCB284C2DE50026A74E /* PhotoSizes.swift in Sources */,
 				B21C80D728CBD0140089CC23 /* AnimalAttributes+CoreData.swift in Sources */,

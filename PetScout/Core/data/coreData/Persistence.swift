@@ -14,10 +14,13 @@ struct PersistenceController {
     static var preview: PersistenceController = {
       let result = PersistenceController(inMemory: true)
       let viewContext = result.container.viewContext
-      for _ in 0..<10 {
-        let newItem = Item(context: viewContext)
-        newItem.timestamp = Date()
-      }
+        for index in 0..<10 {
+            //initializes entries into the in-memory store. It grabs the ith entry
+            //from the mock Animal array and uses toManagedObject(context:)
+            //to persist it to Core Data
+            var animal = Animal.mock[index]
+            animal.toManagedObject(context: viewContext)
+        }
       do {
         try viewContext.save()
       } catch {
