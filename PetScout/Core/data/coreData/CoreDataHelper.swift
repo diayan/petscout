@@ -78,8 +78,10 @@ extension CoreDataHelper {
         return first
     }
     
+    //fetch data from data store using NSFetchRequest
     static func getTestAnimalEntities() -> [AnimalEntity]? {
         let fetchRequest = AnimalEntity.fetchRequest()
+        //you can use sort descriptors here to customize the data returned
         guard let results = try? previewContext.fetch(fetchRequest),
               !results.isEmpty else { return nil }
         return results
