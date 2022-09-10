@@ -65,4 +65,20 @@ class CoreDataTests: XCTestCase {
   """
         )
     }
+    
+    func testFetchManagedObject() throws {
+        let previewContext = PersistenceController.shared.container.viewContext
+        let fetchRequest = AnimalEntity.fetchRequest()
+        fetchRequest.fetchLimit = 1
+        
+        guard let results = try? previewContext.fetch(fetchRequest),
+        let first = results.first else { return }
+        
+        XCTAssert(first.name == "Ellie", """
+    Pet name did not match, was expecting Ellie, got
+    \(String(describing: first.name))
+"""
+        )
+
+    }
 }
