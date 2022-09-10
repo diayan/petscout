@@ -28,15 +28,18 @@ enum CoreDataHelper {
     }
 }
 
+extension Collection where Element == Animal, Index == Int {
+    
+}
 // MARK: - Deleting Data
 extension Collection where Element == NSManagedObject, Index == Int {
     func delete(at indices: IndexSet, inViewContext viewContext: NSManagedObjectContext = CoreDataHelper.context) {
         indices.forEach { index in
-            viewContext.delete(self[index])
+            viewContext.delete(self[index]) //remove object at specified index from data store
         }
         
         do {
-            try viewContext.save()
+            try viewContext.save() //update changes to data store
         } catch {
             fatalError("""
         \(#file), \
@@ -75,8 +78,10 @@ extension CoreDataHelper {
         return first
     }
     
+    //fetch data from data store using NSFetchRequest
     static func getTestAnimalEntities() -> [AnimalEntity]? {
         let fetchRequest = AnimalEntity.fetchRequest()
+        //you can use sort descriptors here to customize the data returned
         guard let results = try? previewContext.fetch(fetchRequest),
               !results.isEmpty else { return nil }
         return results
