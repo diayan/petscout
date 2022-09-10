@@ -45,4 +45,24 @@ class CoreDataTests: XCTestCase {
   """
         )
     }
+    
+    func testDeleteManagedObject() throws {
+        let previewContext = PersistenceController.shared.container.viewContext
+        
+        let fetchRequest = AnimalEntity.fetchRequest() //fetch animal entity
+        
+        guard let results = try? previewContext.fetch(fetchRequest), // fetch all animal entries from db
+        let first = results.first else { return } //get the first object
+        let expectedResult = results.count - 1 //expected count of items after deletion
+        previewContext.delete(first) //delete object
+        
+        //fetch items after deleting an item
+        guard let resultAfterDeletion = try? previewContext.fetch(fetchRequest) else { return }
+        
+        //compare expected number of items after deletion to the actual count after deletion
+        XCTAssertEqual(expectedResult, resultAfterDeletion.count, """
+    The number of results was expected to be \(expectedResult) after deletion, was \(results.count)
+  """
+        )
+    }
 }
