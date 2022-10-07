@@ -7,53 +7,46 @@
 
 import SwiftUI
 
+
 struct AnimalsNearYouView: View {
-    @SectionedFetchRequest<String, AnimalEntity>(
-        sectionIdentifier: \AnimalEntity.animalSpecies,
-        sortDescriptors:
-            [NSSortDescriptor(
-                keyPath: \AnimalEntity.timestamp,
-                ascending: true)],
-        animation: .default
-    )
+  @FetchRequest(
+    sortDescriptors: [
+      NSSortDescriptor(keyPath: \AnimalEntity.timestamp, ascending: true)
+    ],
+    animation: .default
+  )
+  private var animals: FetchedResults<AnimalEntity>
+
+    @ObservedObject var viewModel: AnimalsNearYouViewModel
     
-    var sectionedAnimals: SectionedFetchResults<String, AnimalEntity>
-    
-    
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(sectionedAnimals) { animals in
-                    Section(header: Text("\(animals.id)")) {
-                        ForEach(animals) { animal in
-                            NavigationLink(destination: AnimalDetailsView()) {
-                                AnimalRow(animal: animal)
-                            }}
-                    }
-                }
-            }
-            .task {
-                await fetchAnimals()
-            }
-            .listStyle(.plain)
-            .navigationTitle("Animals near you")
-            .overlay {
-                if isLoading {
-                    ProgressView("Finding Animals near you...")
-                }
-            }
-        }.navigationViewStyle(StackNavigationViewStyle())
-        
+  var body: some View {
+    NavigationView {
+      List {
+        ForEach(animals) { animal in
+          NavigationLink(destination: AnimalDetailsView()) {
+            AnimalRow(animal: animal)
+          }
+        }
+      }
+      .task {
+          await viewModel.fetchAnimals()
+      }
+      .listStyle(.plain)
+      .navigationTitle("Animals near you")
+      .overlay {
+          if viewModel.isLoading && animals.isEmpty {
+          ProgressView("Finding Animals near you...")
+        }
+      }
     }
+    .navigationViewStyle(StackNavigationViewStyle())
+  }
 }
 
 struct AnimalsNearYouView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnimalsNearYouView(isLoading: false)
-            .environment(
-                \.managedObjectContext,
-                 PersistenceController.shared.container.viewContext
-            )
-        AnimalsNearYouView()
-    }
+  static var previews: some View {
+    AnimalsNearYouView(viewModel: AnimalsNearYouViewModel())
+      .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+  }
 }
+
