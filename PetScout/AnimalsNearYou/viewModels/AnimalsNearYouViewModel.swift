@@ -16,32 +16,22 @@ protocol AnimalsFetcher {
 //final is also a compiler optimzer for speeding up build times
 //the ObserverableObject protocol allows you to observe & make changes to the UI
 //from outside the view
+@MainActor //this ensures that all code in this class is executed on the main thread
 final class AnimalsNearYouViewModel: ObservableObject {
     //SwiftUI uses @Published to observe changes in an observableObject
     @Published var isLoading: Bool //for tracking view state
-    private let requestManager = RequestManager() //to fetch api data
+    private let animalFetcher: AnimalsFetcher
     
-    init(isLoading: Bool = false) {
+    init(isLoading: Bool = true, animalFetcher: AnimalsFetcher) {
         self.isLoading = isLoading
+        self.animalFetcher = animalFetcher
     }
     
     func fetchAnimals() async {
-        do {
-            let animalsContainer: AnimalsContainer = try await requestManager.perform(
-                AnimalsRequest.getAnimalsWith(
-                    page: 1, latitude: nil, longitude: nil
-                )
-            )
-            
-            //iterate and convert object to entities to save in coredata
-            for var animal in animalsContainer.animals {
-                animal.toManagedObject()
-            }
-            DispatchQueue.main.async {
-                self.isLoading = false
-            }
-        }catch {
-            print("Error fetching animals \(error.localizedDescription)")
+        let animals  = await animalFetcher.fetchAnimals(page: 1)
+        for var animal in animals {
+            animal.toManagedObject()
         }
+        isLoading = false
     }
 }
