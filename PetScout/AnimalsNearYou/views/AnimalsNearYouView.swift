@@ -19,8 +19,6 @@ struct AnimalsNearYouView: View {
     
     var sectionedAnimals: SectionedFetchResults<String, AnimalEntity>
     
-    @State var isLoading = true
-    private let requestManager = RequestManager()
     
     var body: some View {
         NavigationView {
@@ -46,30 +44,6 @@ struct AnimalsNearYouView: View {
             }
         }.navigationViewStyle(StackNavigationViewStyle())
         
-    }
-    
-    func fetchAnimals() async {
-        do {
-            let animalsContainer: AnimalsContainer =
-            try await requestManager.perform(AnimalsRequest.getAnimalsWith(
-                page: 1,
-                latitude: nil,
-                longitude: nil)
-            )
-            
-            //o convert each animal from the structure to a Core Data object
-            for var animal in animalsContainer.animals {
-                animal.toManagedObject()
-            }
-            await stopLoading()
-        } catch {
-            print("Error fetching animals...\(error)")
-        }
-    }
-    
-    @MainActor
-    func stopLoading() async {
-        isLoading = false
     }
 }
 
