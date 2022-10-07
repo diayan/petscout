@@ -7,79 +7,59 @@
 
 import SwiftUI
 
+
 struct AnimalsNearYouView: View {
-    @SectionedFetchRequest<String, AnimalEntity>(
-        sectionIdentifier: \AnimalEntity.animalSpecies,
-        sortDescriptors:
-            [NSSortDescriptor(
-                keyPath: \AnimalEntity.timestamp,
-                ascending: true)],
-        animation: .default
-    )
+  @FetchRequest(
+    sortDescriptors: [
+      NSSortDescriptor(keyPath: \AnimalEntity.timestamp, ascending: true)
+    ],
+    animation: .default
+  )
+  private var animals: FetchedResults<AnimalEntity>
+
+    @ObservedObject var viewModel: AnimalsNearYouViewModel
     
-    var sectionedAnimals: SectionedFetchResults<String, AnimalEntity>
-    
-    @State var isLoading = true
-    private let requestManager = RequestManager()
-    
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(sectionedAnimals) { animals in
-                    Section(header: Text("\(animals.id)")) {
-                        ForEach(animals) { animal in
-                            NavigationLink(destination: AnimalDetailsView()) {
-                                AnimalRow(animal: animal)
-                            }}
-                    }
-                }
-            }
-            .task {
-                await fetchAnimals()
-            }
-            .listStyle(.plain)
-            .navigationTitle("Animals near you")
-            .overlay {
-                if isLoading {
-                    ProgressView("Finding Animals near you...")
-                }
-            }
-        }.navigationViewStyle(StackNavigationViewStyle())
-        
-    }
-    
-    func fetchAnimals() async {
-        do {
-            let animalsContainer: AnimalsContainer =
-            try await requestManager.perform(AnimalsRequest.getAnimalsWith(
-                page: 1,
-                latitude: nil,
-                longitude: nil)
-            )
-            
-            //o convert each animal from the structure to a Core Data object
-            for var animal in animalsContainer.animals {
-                animal.toManagedObject()
-            }
-            await stopLoading()
-        } catch {
-            print("Error fetching animals...\(error)")
+  var body: some View {
+    NavigationView {
+      List {
+        ForEach(animals) { animal in
+          NavigationLink(destination: AnimalDetailsView()) {
+              AnimalRow(animal: animal)
+          }
         }
+          if !animals.isEmpty && viewModel.hasMoreAnimals {
+              ProgressView("Finding more animals...")
+                  .padding()
+                  .frame(maxWidth: .infinity)
+                  .task {
+                      await viewModel.fetchMoreAnimals()
+                  }
+          }
+      }
+      .task {
+          await viewModel.fetchAnimals()
+      }
+      .listStyle(.plain)
+      .navigationTitle("Animals near you")
+      .overlay {
+          if viewModel.isLoading && animals.isEmpty {
+          ProgressView("Finding Animals near you...")
+        }
+      }
     }
-    
-    @MainActor
-    func stopLoading() async {
-        isLoading = false
-    }
+    .navigationViewStyle(StackNavigationViewStyle())
+  }
 }
 
 struct AnimalsNearYouView_Previews: PreviewProvider {
     static var previews: some View {
-        AnimalsNearYouView(isLoading: false)
-            .environment(
-                \.managedObjectContext,
-                 PersistenceController.shared.container.viewContext
+        AnimalsNearYouView(
+            viewModel: AnimalsNearYouViewModel(
+                animalFetcher: AnimalsFetcherMock(),
+                animalStore: AnimalStoreService(context: CoreDataHelper.previewContext)
             )
-        AnimalsNearYouView()
+        )
+        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+

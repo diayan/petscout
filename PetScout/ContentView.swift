@@ -10,28 +10,33 @@ import SwiftUI
 struct ContentView: View {
     let managedObjectContext =
     PersistenceController.shared.container.viewContext
-
-  var body: some View {
-    TabView {
-      AnimalsNearYouView()
-        .tabItem {
-          Label("Near you", systemImage: "location")
+    
+    var body: some View {
+        TabView {
+            AnimalsNearYouView(viewModel: AnimalsNearYouViewModel(
+                animalFetcher: FetchAnimalsService(requestManager: RequestManager()),
+                animalStore: AnimalStoreService(
+                    context: PersistenceController.shared.container.newBackgroundContext()
+                )
+            ))
+                .tabItem {
+                    Label("Near you", systemImage: "location")
+                }
+            //inject the view context into the SwiftUI Environment.
+                .environment(\.managedObjectContext, managedObjectContext)
+            
+            SearchView()
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+            //inject the view context into the SwiftUI Environment.
+                .environment(\.managedObjectContext, managedObjectContext)
         }
-        //inject the view context into the SwiftUI Environment.
-        .environment(\.managedObjectContext, managedObjectContext)
-
-      SearchView()
-        .tabItem {
-          Label("Search", systemImage: "magnifyingglass")
-        }
-        //inject the view context into the SwiftUI Environment.
-        .environment(\.managedObjectContext, managedObjectContext)
     }
-  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
-  }
+    static var previews: some View {
+        ContentView()
+    }
 }
