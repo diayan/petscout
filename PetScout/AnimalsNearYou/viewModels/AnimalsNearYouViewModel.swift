@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol AnimalsFetcher {
+    func fetchAnimals(page: Int) async -> [Animal]
+}
+
 //for AnimalsNearYouView to store states and handle request and user interactions
 //final classes cannot be overriden because they disallow subclassing
 //final is also a compiler optimzer for speeding up build times
@@ -29,10 +33,13 @@ final class AnimalsNearYouViewModel: ObservableObject {
                 )
             )
             
+            //iterate and convert object to entities to save in coredata
             for var animal in animalsContainer.animals {
                 animal.toManagedObject()
             }
-            isLoading = false
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
         }catch {
             print("Error fetching animals \(error.localizedDescription)")
         }
