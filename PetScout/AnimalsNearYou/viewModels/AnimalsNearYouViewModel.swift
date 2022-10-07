@@ -11,6 +11,10 @@ protocol AnimalsFetcher {
     func fetchAnimals(page: Int) async -> [Animal]
 }
 
+protocol AnimalStore {
+    func save(animals: [Animal]) async throws
+}
+
 //for AnimalsNearYouView to store states and handle request and user interactions
 //final classes cannot be overriden because they disallow subclassing
 //final is also a compiler optimzer for speeding up build times
@@ -21,16 +25,20 @@ final class AnimalsNearYouViewModel: ObservableObject {
     //SwiftUI uses @Published to observe changes in an observableObject
     @Published var isLoading: Bool //for tracking view state
     private let animalFetcher: AnimalsFetcher
+    private let animalStore: AnimalStore
     
-    init(isLoading: Bool = true, animalFetcher: AnimalsFetcher) {
+    init(isLoading: Bool = true, animalFetcher: AnimalsFetcher, animalStore: AnimalStore) {
         self.isLoading = isLoading
         self.animalFetcher = animalFetcher
+        self.animalStore = animalStore
     }
     
     func fetchAnimals() async {
         let animals  = await animalFetcher.fetchAnimals(page: 1)
-        for var animal in animals {
-            animal.toManagedObject()
+        do {
+            try await animalStore.save(animals: animals)
+        }catch {
+            print("Error storing animals...\(error.localizedDescription)")
         }
         isLoading = false
     }
