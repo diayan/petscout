@@ -13,7 +13,7 @@ struct ContentView: View {
 
   var body: some View {
     TabView {
-      AnimalsNearYouView()
+      AnimalsNearYouView(viewModel: AnimalsNearYouViewModel())
         .tabItem {
           Label("Near you", systemImage: "location")
         }
