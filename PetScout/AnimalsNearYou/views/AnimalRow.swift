@@ -53,17 +53,9 @@ struct AnimalRow: View {
           
           HStack {
             Text(animal.age.rawValue)
-              .padding(4)
-              .background(animal.age.color.opacity(0.2))
-              .cornerRadius(8)
-              .foregroundColor(animal.age.color)
-              .font(.subheadline)
+              .modifier(AnimalAttributesCard(color: animal.age.color))
             Text(animal.gender.rawValue)
-              .padding(4)
-              .background(.pink.opacity(0.2))
-              .cornerRadius(8)
-              .foregroundColor(.pink)
-              .font(.subheadline)
+              .modifier(AnimalAttributesCard(color: .pink))
           }
       }
       .lineLimit(1)
