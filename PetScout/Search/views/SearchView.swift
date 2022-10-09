@@ -43,6 +43,10 @@ struct SearchView: View {
                     text: $viewModel.searchText,
                     placement: .navigationBarDrawer(displayMode: .always)
                 )
+                .onChange(of: viewModel.searchText) { _ in
+                    //implement searching the API 
+                    viewModel.search()
+                }
                 .navigationTitle("Find your future pet")
         }.navigationViewStyle(StackNavigationViewStyle())
     }
