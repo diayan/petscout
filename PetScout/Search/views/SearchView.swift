@@ -54,7 +54,15 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(viewModel: SearchViewModel(
+            animalSearcher: AnimalSearcherMock(),
+            animalStore: AnimalStoreService(
+                context: PersistenceController.preview.container.viewContext
+            )
+        ))
+            .environment(\.managedObjectContext,
+                          PersistenceController.preview.container.viewContext
+            )
     }
 }
 
