@@ -28,4 +28,11 @@ final class AnimalsNearYouViewModelTestCase: XCTestCase {
         await viewModel.fetchAnimals()
         XCTAssertFalse(viewModel.isLoading, "view shouldn't be loading but it is loading")
     }
+    
+    //tests if the page is 1 before scroll and checks again after more data has been fetched 
+    func testUpdatePageOnFetchMoreAnimals() async {
+        XCTAssertEqual(viewModel.page, 1, "the view model's page property should be 1 before fetching but it's \(viewModel.page)")
+        await viewModel.fetchMoreAnimals()
+        XCTAssertEqual(viewModel.page, 2, "the view model's page property should be 2 after fetching, but it's \(viewModel.page)")
+    }
 }
