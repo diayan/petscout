@@ -8,17 +8,34 @@
 import SwiftUI
 
 struct SearchView: View {
-  var body: some View {
-    NavigationView {
-      Text("TODO: Search View")
-        .navigationTitle("Find your future pet")
-    }.navigationViewStyle(StackNavigationViewStyle())
-  }
+    //fetch data from core data, filtered by timestamp in ascending order
+    @FetchRequest(
+        sortDescriptors: [
+            NSSortDescriptor(
+                keyPath: \AnimalEntity.timestamp, ascending: true
+            )],
+        animation: .default
+    )
+    private var animals: FetchedResults<AnimalEntity>
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(animals) { animal in
+                    NavigationLink(destination: AnimalDetailsView()) {
+                        AnimalRow(animal: animal)
+                    }
+                }
+            }
+            .listStyle(.plain)
+            .navigationTitle("Find your future pet")
+        }.navigationViewStyle(StackNavigationViewStyle())
+    }
 }
 
 struct SearchView_Previews: PreviewProvider {
-  static var previews: some View {
-    SearchView()
-  }
+    static var previews: some View {
+        SearchView()
+    }
 }
 
