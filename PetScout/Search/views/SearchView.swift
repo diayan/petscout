@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var searchText = ""
     //fetch data from core data, filtered by timestamp in ascending order
     @FetchRequest(
         sortDescriptors: [
@@ -21,6 +22,10 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             AnimalListView(animals: animals)
+                .searchable(
+                    text: $searchText,
+                    placement: .navigationBarDrawer(displayMode: .always)
+                )
                 .navigationTitle("Find your future pet")
         }.navigationViewStyle(StackNavigationViewStyle())
     }
