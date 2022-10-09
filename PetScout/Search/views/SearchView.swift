@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct SearchView: View {
+    var filteredAnimals: [AnimalEntity] {
+        animals.filter {
+            if searchText.isEmpty {
+                return true
+            }
+            return $0.name?.contains(searchText) ?? false
+        }
+    }
+    
     @State var searchText = ""
     //fetch data from core data, filtered by timestamp in ascending order
     @FetchRequest(
@@ -21,7 +30,7 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
-            AnimalListView(animals: animals)
+            AnimalListView(animals: filteredAnimals)
                 .searchable(
                     text: $searchText,
                     placement: .navigationBarDrawer(displayMode: .always)
