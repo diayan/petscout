@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct SearchView: View {
+    //@StateObject makes the viewModel an observable object
+    @StateObject var viewModel = SearchViewModel (
+        animalSearcher: AnimalSearcherService(requestManager: RequestManager()),
+        animalStore: AnimalStoreService(
+            context: PersistenceController.shared.container.newBackgroundContext()
+        )
+    )
+    
     var filteredAnimals: [AnimalEntity] {
-        animals.filter {
-            if searchText.isEmpty {
+        guard viewModel.shouldFilter else {return []}
+        return animals.filter {
+            if viewModel.searchText.isEmpty {
                 return true
             }
-            return $0.name?.contains(searchText) ?? false
+            return $0.name?.contains(viewModel.searchText) ?? false
         }
     }
     
-    @State var searchText = ""
     //fetch data from core data, filtered by timestamp in ascending order
     @FetchRequest(
         sortDescriptors: [
@@ -32,7 +40,7 @@ struct SearchView: View {
         NavigationView {
             AnimalListView(animals: filteredAnimals)
                 .searchable(
-                    text: $searchText,
+                    text: $viewModel.searchText,
                     placement: .navigationBarDrawer(displayMode: .always)
                 )
                 .navigationTitle("Find your future pet")
