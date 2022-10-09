@@ -5,6 +5,10 @@
 //  Created by diayan siat on 09/10/2022.
 //
 
+// @ViewBuilder is a result builder introduced for SwiftUI. It uses result builders to create a DSL-like
+// syntax for composing views from a closure. It lets you declare your views, one after the other, inside
+// the body property.
+
 import SwiftUI
 
 struct AnimalListView<Content, Data>: View where

@@ -20,15 +20,8 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(animals) { animal in
-                    NavigationLink(destination: AnimalDetailsView()) {
-                        AnimalRow(animal: animal)
-                    }
-                }
-            }
-            .listStyle(.plain)
-            .navigationTitle("Find your future pet")
+            AnimalListView(animals: animals)
+                .navigationTitle("Find your future pet")
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
