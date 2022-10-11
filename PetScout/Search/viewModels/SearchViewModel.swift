@@ -17,11 +17,13 @@ protocol AnimalSearcher {
 
 final class SearchViewModel: ObservableObject {
     @Published var searchText = ""
+    @Published var ageSelection = AnimalSearchAge.none //use to keep track of age user selected default none
+    @Published var typeSelection = AnimalSearchType.none //keep track of type user selected default non
     private let animalSearcher: AnimalSearcher
     private let animalStore: AnimalStore //to store results to core data
     
     var shouldFilter: Bool {
-        !searchText.isEmpty
+        !searchText.isEmpty || ageSelection != .none || typeSelection != .none
     }
     
     //initializer for injecting properties
@@ -35,8 +37,8 @@ final class SearchViewModel: ObservableObject {
             //query the api based on user input
             let animals = await animalSearcher.searchAnimal(
                 by: searchText,
-                age: .none,
-                type: .none
+                age: ageSelection,
+                type: typeSelection
             )
             
             do {
@@ -46,5 +48,11 @@ final class SearchViewModel: ObservableObject {
                 print("Error storing animals...\(error.localizedDescription)")
             }
         }
+    }
+    
+    //clear age and type filters
+    func clearFilters() {
+        typeSelection = .none
+        ageSelection = .none
     }
 }

@@ -8,6 +8,17 @@
 import SwiftUI
 
 struct SearchView: View {
+    //fetch data from core data, filtered by timestamp in ascending order
+    @FetchRequest(
+        sortDescriptors: [
+            NSSortDescriptor(
+                keyPath: \AnimalEntity.timestamp, ascending: true
+            )],
+        animation: .default
+    )
+    private var animals: FetchedResults<AnimalEntity>
+    
+    
     //@StateObject makes the viewModel an observable object
     @StateObject var viewModel = SearchViewModel (
         animalSearcher: AnimalSearcherService(requestManager: RequestManager()),
@@ -26,16 +37,6 @@ struct SearchView: View {
         }
     }
     
-    //fetch data from core data, filtered by timestamp in ascending order
-    @FetchRequest(
-        sortDescriptors: [
-            NSSortDescriptor(
-                keyPath: \AnimalEntity.timestamp, ascending: true
-            )],
-        animation: .default
-    )
-    private var animals: FetchedResults<AnimalEntity>
-    
     var body: some View {
         NavigationView {
             AnimalListView(animals: filteredAnimals)
@@ -44,8 +45,15 @@ struct SearchView: View {
                     placement: .navigationBarDrawer(displayMode: .always)
                 )
                 .onChange(of: viewModel.searchText) { _ in
+                    //onChange(of:perform:) is a modifier that observes changes to a type that
+                    //conforms to Equatable, in this case viewModel.searchText.
                     //implement searching the API 
                     viewModel.search()
+                }
+                .overlay {
+                    if filteredAnimals.isEmpty && !viewModel.searchText.isEmpty {
+                        EmptyResultsView(query: viewModel.searchText)
+                    }
                 }
                 .navigationTitle("Find your future pet")
         }.navigationViewStyle(StackNavigationViewStyle())
