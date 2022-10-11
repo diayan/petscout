@@ -78,6 +78,8 @@
 		B27A6DB628F2F5C4001662FE /* AnimalSearcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A6DB528F2F5C4001662FE /* AnimalSearcherService.swift */; };
 		B27A6DB828F31066001662FE /* AnimalSearchMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A6DB728F31066001662FE /* AnimalSearchMock.swift */; };
 		B280C46228C6CB0E005D6DE5 /* Animal+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280C46128C6CB0E005D6DE5 /* Animal+CoreData.swift */; };
+		B2C5607928F5CE3A000183FD /* SearchFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5607828F5CE3A000183FD /* SearchFilterView.swift */; };
+		B2C5607B28F5E2DF000183FD /* FilterAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5607A28F5E2DF000183FD /* FilterAnimals.swift */; };
 		B2E5D179284E932C003E81A9 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D178284E932C003E81A9 /* RequestManager.swift */; };
 		B2E5D17B284E945F003E81A9 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D17A284E945F003E81A9 /* DataParser.swift */; };
 		B2E5D17E284E9D4B003E81A9 /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D17D284E9D4B003E81A9 /* AuthTokenRequest.swift */; };
@@ -187,6 +189,8 @@
 		B27A6DB528F2F5C4001662FE /* AnimalSearcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearcherService.swift; sourceTree = "<group>"; };
 		B27A6DB728F31066001662FE /* AnimalSearchMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSearchMock.swift; sourceTree = "<group>"; };
 		B280C46128C6CB0E005D6DE5 /* Animal+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreData.swift"; sourceTree = "<group>"; };
+		B2C5607828F5CE3A000183FD /* SearchFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterView.swift; sourceTree = "<group>"; };
+		B2C5607A28F5E2DF000183FD /* FilterAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterAnimals.swift; sourceTree = "<group>"; };
 		B2E5D178284E932C003E81A9 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		B2E5D17A284E945F003E81A9 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		B2E5D17D284E9D4B003E81A9 /* AuthTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRequest.swift; sourceTree = "<group>"; };
@@ -486,6 +490,7 @@
 				B2675003284C36710026A74E /* EmptyResultsView.swift */,
 				B2675005284C368C0026A74E /* SuggestionsGrid.swift */,
 				B2675007284C36A60026A74E /* SearchView.swift */,
+				B2C5607828F5CE3A000183FD /* SearchFilterView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 			isa = PBXGroup;
 			children = (
 				B27A6DB228F2E77B001662FE /* SearchViewModel.swift */,
+				B2C5607A28F5E2DF000183FD /* FilterAnimals.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -840,6 +846,7 @@
 				B2674FEE284C33C50026A74E /* AnimalContactsView.swift in Sources */,
 				B21C80E728CC00C00089CC23 /* CoreDataHelper.swift in Sources */,
 				B2674FFE284C35CB0026A74E /* AnimalSearchAge.swift in Sources */,
+				B2C5607B28F5E2DF000183FD /* FilterAnimals.swift in Sources */,
 				B2674FCB284C2DE50026A74E /* PhotoSizes.swift in Sources */,
 				B21C80D728CBD0140089CC23 /* AnimalAttributes+CoreData.swift in Sources */,
 				B2675008284C36A60026A74E /* SearchView.swift in Sources */,
@@ -854,6 +861,7 @@
 				B2674FC5284C2DA20026A74E /* Gender.swift in Sources */,
 				B2674FF0284C33EA0026A74E /* AnimalContactLink.swift in Sources */,
 				B2675029284CA3AA0026A74E /* NetworkError.swift in Sources */,
+				B2C5607928F5CE3A000183FD /* SearchFilterView.swift in Sources */,
 				B2674FD1284C2E690026A74E /* AnimalEnvironment.swift in Sources */,
 				B2E5D186284EAC4D003E81A9 /* AccessTokenManager.swift in Sources */,
 				B2E5D188284EACB3003E81A9 /* AppUserDefaultsKeys.swift in Sources */,

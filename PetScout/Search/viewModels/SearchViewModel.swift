@@ -50,6 +50,11 @@ final class SearchViewModel: ObservableObject {
         }
     }
     
+    func selectTypeSuggestion(_ type: AnimalSearchType) {
+        typeSelection = type
+        search()
+    }
+    
     //clear age and type filters
     func clearFilters() {
         typeSelection = .none

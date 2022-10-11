@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State var filterPickerIsPresented = false
     //fetch data from core data, filtered by timestamp in ascending order
     @FetchRequest(
         sortDescriptors: [
@@ -27,14 +28,18 @@ struct SearchView: View {
         )
     )
     
+    private var filterAnimals: FilterAnimals {
+        FilterAnimals(
+            animals: animals,
+            query: viewModel.searchText,
+            age: viewModel.ageSelection,
+            type: viewModel.typeSelection
+        )
+    }
+    
     var filteredAnimals: [AnimalEntity] {
         guard viewModel.shouldFilter else {return []}
-        return animals.filter {
-            if viewModel.searchText.isEmpty {
-                return true
-            }
-            return $0.name?.contains(viewModel.searchText) ?? false
-        }
+        return filterAnimals()
     }
     
     var body: some View {
@@ -53,6 +58,28 @@ struct SearchView: View {
                 .overlay {
                     if filteredAnimals.isEmpty && !viewModel.searchText.isEmpty {
                         EmptyResultsView(query: viewModel.searchText)
+                    }
+                }
+                .toolbar {
+                    ToolbarItem {
+                        Button {
+                            filterPickerIsPresented.toggle()
+                        } label: {
+                            Label("Filter", systemImage: "slider.horizontal.3")
+                        }
+                        .sheet(isPresented: $filterPickerIsPresented) {
+                            NavigationView {
+                                SearchFilterView(viewModel: viewModel)
+                            }
+                        }
+                    }
+                }
+                .overlay {
+                    if filteredAnimals.isEmpty && viewModel.searchText.isEmpty {
+                        SuggestionsGrid(suggestions: AnimalSearchType.suggestions) { suggestion in
+                            viewModel.selectTypeSuggestion(suggestion)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     }
                 }
                 .navigationTitle("Find your future pet")
