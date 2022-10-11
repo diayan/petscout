@@ -20,22 +20,17 @@ struct AnimalsNearYouView: View {
     @ObservedObject var viewModel: AnimalsNearYouViewModel
     
   var body: some View {
-    NavigationView {
-      List {
-        ForEach(animals) { animal in
-          NavigationLink(destination: AnimalDetailsView()) {
-              AnimalRow(animal: animal)
+      NavigationView {
+          AnimalListView(animals: animals) {
+              if !animals.isEmpty && viewModel.hasMoreAnimals {
+                  ProgressView("Finding more animals...")
+                      .padding()
+                      .frame(maxWidth: .infinity)
+                      .task {
+                          await viewModel.fetchMoreAnimals()
+                      }
+              }
           }
-        }
-          if !animals.isEmpty && viewModel.hasMoreAnimals {
-              ProgressView("Finding more animals...")
-                  .padding()
-                  .frame(maxWidth: .infinity)
-                  .task {
-                      await viewModel.fetchMoreAnimals()
-                  }
-          }
-      }
       .task {
           await viewModel.fetchAnimals()
       }
