@@ -14,7 +14,6 @@ public struct OnboardingModel: Identifiable {
     let description: String
     let image: Image
     
-    
     let nextButtonTitle: String
     let skipButtonTitle: String
     
