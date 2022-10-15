@@ -98,7 +98,7 @@ private extension PreviewProvider {
     static var mockOnboardingModel: [OnboardingModel] {
         [
             OnboardingModel(
-                title: "Welcome to\n PetSave",
+                title: "Welcome to\n PetScout",
                 description: "Looking for a Pet?\n Then you're at the right place",
                 image: .bird
             ),
