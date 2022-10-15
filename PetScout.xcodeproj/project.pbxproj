@@ -96,6 +96,12 @@
 		B2E4C3BF28F9FDA0009465C5 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3BD28F9FDA0009465C5 /* OnboardingModel.swift */; };
 		B2E4C3C128F9FDA7009465C5 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3C028F9FDA7009465C5 /* Pet.swift */; };
 		B2E4C3C228F9FDA7009465C5 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3C028F9FDA7009465C5 /* Pet.swift */; };
+		B2E4C3C428FA03A8009465C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3C328FA03A8009465C5 /* OnboardingView.swift */; };
+		B2E4C3C528FA03A8009465C5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3C328FA03A8009465C5 /* OnboardingView.swift */; };
+		B2E4C3C728FAAEFA009465C5 /* OnboardingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3C628FAAEFA009465C5 /* OnboardingBackgroundView.swift */; };
+		B2E4C3C828FAAEFA009465C5 /* OnboardingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3C628FAAEFA009465C5 /* OnboardingBackgroundView.swift */; };
+		B2E4C3CA28FAAFAA009465C5 /* PetScoutOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3C928FAAFAA009465C5 /* PetScoutOnboardingView.swift */; };
+		B2E4C3CB28FAAFAA009465C5 /* PetScoutOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4C3C928FAAFAA009465C5 /* PetScoutOnboardingView.swift */; };
 		B2E5D179284E932C003E81A9 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D178284E932C003E81A9 /* RequestManager.swift */; };
 		B2E5D17B284E945F003E81A9 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D17A284E945F003E81A9 /* DataParser.swift */; };
 		B2E5D17E284E9D4B003E81A9 /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E5D17D284E9D4B003E81A9 /* AuthTokenRequest.swift */; };
@@ -237,6 +243,9 @@
 		B2E4C3B928F9FBE2009465C5 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		B2E4C3BD28F9FDA0009465C5 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		B2E4C3C028F9FDA7009465C5 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		B2E4C3C328FA03A8009465C5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B2E4C3C628FAAEFA009465C5 /* OnboardingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBackgroundView.swift; sourceTree = "<group>"; };
+		B2E4C3C928FAAFAA009465C5 /* PetScoutOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetScoutOnboardingView.swift; sourceTree = "<group>"; };
 		B2E5D178284E932C003E81A9 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		B2E5D17A284E945F003E81A9 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		B2E5D17D284E9D4B003E81A9 /* AuthTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRequest.swift; sourceTree = "<group>"; };
@@ -695,6 +704,9 @@
 				B2E4C3B328F9FBAF009465C5 /* Bundle+Extension.swift */,
 				B2E4C3B628F9FBD6009465C5 /* Color+Extension.swift */,
 				B2E4C3B928F9FBE2009465C5 /* Image+Extension.swift */,
+				B2E4C3C328FA03A8009465C5 /* OnboardingView.swift */,
+				B2E4C3C628FAAEFA009465C5 /* OnboardingBackgroundView.swift */,
+				B2E4C3C928FAAFAA009465C5 /* PetScoutOnboardingView.swift */,
 			);
 			path = PetScoutOnboarding;
 			sourceTree = "<group>";
@@ -992,6 +1004,7 @@
 				B21C80D728CBD0140089CC23 /* AnimalAttributes+CoreData.swift in Sources */,
 				B2675008284C36A60026A74E /* SearchView.swift in Sources */,
 				B2675004284C36710026A74E /* EmptyResultsView.swift in Sources */,
+				B2E4C3CA28FAAFAA009465C5 /* PetScoutOnboardingView.swift in Sources */,
 				B2674FBA284C2C420026A74E /* Persistence.swift in Sources */,
 				B21C80DB28CBD1860089CC23 /* APIColors+CoreData.swift in Sources */,
 				B21C80E528CBD8E70089CC23 /* Organization+CoreData.swift in Sources */,
@@ -1001,6 +1014,7 @@
 				B25139D328CB2952008CD6C8 /* Breed+CoreData.swift in Sources */,
 				B2674FC5284C2DA20026A74E /* Gender.swift in Sources */,
 				B2674FF0284C33EA0026A74E /* AnimalContactLink.swift in Sources */,
+				B2E4C3C428FA03A8009465C5 /* OnboardingView.swift in Sources */,
 				B2675029284CA3AA0026A74E /* NetworkError.swift in Sources */,
 				B2C5607928F5CE3A000183FD /* SearchFilterView.swift in Sources */,
 				B2674FD1284C2E690026A74E /* AnimalEnvironment.swift in Sources */,
@@ -1034,6 +1048,7 @@
 				B227537828F07D0300AB09BF /* AnimalStoreService.swift in Sources */,
 				B2675006284C368C0026A74E /* SuggestionsGrid.swift in Sources */,
 				B2674FB7284C2BF90026A74E /* APIConstants.swift in Sources */,
+				B2E4C3C728FAAEFA009465C5 /* OnboardingBackgroundView.swift in Sources */,
 				B2E5D18F284EB6B9003E81A9 /* AnimalsContainer.swift in Sources */,
 				B2674FF2284C34060026A74E /* AnimalLocationView.swift in Sources */,
 				B2674FE3284C302A0026A74E /* AddressFetcher.swift in Sources */,
@@ -1074,7 +1089,10 @@
 			files = (
 				B2E4C3C228F9FDA7009465C5 /* Pet.swift in Sources */,
 				B2E4C3B528F9FBAF009465C5 /* Bundle+Extension.swift in Sources */,
+				B2E4C3C828FAAEFA009465C5 /* OnboardingBackgroundView.swift in Sources */,
 				B2E4C3B828F9FBD6009465C5 /* Color+Extension.swift in Sources */,
+				B2E4C3CB28FAAFAA009465C5 /* PetScoutOnboardingView.swift in Sources */,
+				B2E4C3C528FA03A8009465C5 /* OnboardingView.swift in Sources */,
 				B2E4C3BB28F9FBE2009465C5 /* Image+Extension.swift in Sources */,
 				B2E4C3BF28F9FDA0009465C5 /* OnboardingModel.swift in Sources */,
 			);
@@ -1378,7 +1396,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1412,7 +1430,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
